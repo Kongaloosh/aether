@@ -26,9 +26,10 @@ def show_entries():
     if request.headers.get('Accept') == "application/json":  # if someone else is consuming
         photos = []
         for f in os.listdir(FILEPATH):
-            photos.append("images/" +f)
+            if f != 'blank.jpg':
+                photos.append("images/" +f)
         shuffle(photos)
-        photos = photos[:20]
+        # photos = photos
         return jsonify(photos)
     else:
         return render_template('index.html')
