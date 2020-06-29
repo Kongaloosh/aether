@@ -5,20 +5,20 @@
     <title>Aetherloosh</title>
 </head>
 <body>
-
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="{{ url_for('static', filename='aether.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='blurry-load.css') }}">
 <div class="container">
   <div class="row">
-  <div id="1" class="card-columns">
+  <div id="bricklayer" class="bricklayer">
 
   </div>
 </div>
 </div>
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js"></script>
 <script src="{{ url_for('static', filename='js/blurry-load.js') }}"></script>
 <script src="{{ url_for('static', filename='js/photo_scroller.js') }}"></script>
 

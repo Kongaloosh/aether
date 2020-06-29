@@ -1,17 +1,22 @@
 const blurryImageLoad = new BlurryImageLoad();
 var photos = []
+var ids = 0;
+// var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
 
 function add_photos(data){
     for (var idx = 0; idx < data.length; idx++) {
-        var card = document.createElement("div");
+        var holder = document.createElement("div");
         var img  = document.createElement("img");
-        img.className = "card-img blurry-load";
+        img.className = "blurry-load img-responsive";
         img.loading = "lazy";
         img.setAttribute("data_large", data[idx]);
         img.src = data[idx];
-        img.style = "width:100%"
-        card.append(img)
-        document.getElementById("1").append(card);
+        img.style = "width:auto;max-height:400px;"
+        img.id = ids;
+        ids++;
+        holder.append(img);
+        document.getElementById("bricklayer").append(holder);
+        // bricklayer.append(holder);
     }
     blurryImageLoad.load();
 }
@@ -31,7 +36,9 @@ fetch('/',
                )
             }
             }
+            
             );
+
 
 window.addEventListener("scroll", function(){
     if(document.documentElement.scrollTop + window.innerHeight == (document.documentElement.scrollHeight)){
