@@ -7,7 +7,7 @@ function add_photos(data){
     for (var idx = 0; idx < data.length; idx++) {
         var holder = document.createElement("div");
         var img  = document.createElement("img");
-        img.className = "blurry-load img-responsive";
+        img.className = "blurry-load img-fluid img-responsive";
         img.loading = "lazy";
         img.setAttribute("data_large", data[idx]);
         img.src = data[idx];
